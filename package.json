@@ -1,7 +1,7 @@
 {
   "name": "bridge-app",
   "version": "0.1.0",
-  "homepage": "https://likinus.github.io/Bridge/",
+  "homepage": "https://bridge-test-062022.herokuapp.com",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
@@ -24,10 +24,8 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development webpack serve --config webpack.config.js",
-    "predeploy": "npm run build",
     "build": "NODE_ENV=production webpack serve --config webpack.config.js",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "node server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
