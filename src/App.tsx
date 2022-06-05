@@ -8,7 +8,6 @@ import {Routes as EnumRoutes} from "@enums";
 import {actions} from "@store/auth";
 
 import styles from './index.scss';
-import {BalanceService} from "@services/balance/balance.service";
 
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
             dispatch(actions.setIsUserAuthorized(isAuthorized));
 
             if (isAuthorized) {
-                BalanceService.initBalance(7500);
                 navigate(EnumRoutes.Main);
             } else {
                 navigate(EnumRoutes.Login)
