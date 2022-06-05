@@ -20,6 +20,10 @@ const MainPage: FC = () => {
     const [isClicked, setIsClicked] = useState<boolean>(false);
     const [result, setResult] = useState<string>('');
 
+    useEffect(() => {
+        BalanceService.initBalance(7500);
+    }, [])
+
     const openCards = (firstValue: string, secondValue: string) => (): void => {
         if (!isClicked) {
             setIsClicked(true);

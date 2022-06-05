@@ -5,7 +5,6 @@ import {useNavigate} from "react-router-dom";
 import useInput from "@hooks";
 import {Routes} from "@enums";
 import {Button} from "@components";
-import {BalanceService} from "@services/balance/balance.service";
 
 import styles from "./login-form-styles.scss";
 
@@ -23,7 +22,6 @@ const LoginFormComponent: FC = () => {
 
         if (login.value === loginConst && password.value === passwordConst) {
             localStorage.setItem('user', JSON.stringify({isAuthorized: true}));
-            BalanceService.initBalance(7500);
             navigate(Routes.Main);
         } else {
             setIsCorrectLoginData(false);
