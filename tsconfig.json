@@ -18,9 +18,82 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components": [
+        "src/components"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages": [
+        "src/pages/index"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@routes": [
+        "src/router/index"
+      ],
+      "@routes/*": [
+        "src/router/*"
+      ],
+      "@hooks": [
+        "src/hooks/index"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@enums": [
+        "src/enums/index"
+      ],
+      "@enums/*": [
+        "src/enums/*"
+      ],
+      "@store": [
+        "src/store/index"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@utils": [
+        "src/utils/index"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@assets": [
+        "assets/"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@services": [
+        "src/services/index"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@constants": [
+        "src/constants/index"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      }
+    ]
   },
   "include": [
-    "src"
+    "src/**/*"
   ]
 }

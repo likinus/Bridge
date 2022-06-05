@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+
+import {Route, Routes, useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+
+import appRoutes from "@routes";
+import {Routes as EnumRoutes} from "@enums";
+import {actions} from "@store/auth";
+
+import styles from './index.scss';
+import {BalanceService} from "@services/balance/balance.service";
+
 
 function App() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const item = localStorage.getItem('user');
+
+        if (item) {
+            const isAuthorized = JSON.parse(item).isAuthorized;
+
+            dispatch(actions.setIsUserAuthorized(isAuthorized));
+
+            if (isAuthorized) {
+                BalanceService.initBalance(7500);
+                navigate(EnumRoutes.Main);
+            } else {
+                navigate(EnumRoutes.Login)
+            }
+
+        } else {
+            navigate(EnumRoutes.Login);
+        }
+
+    }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+            <Routes>
+                {appRoutes.map((route) => (
+                    <Route
+                        key={route.name}
+                        path={route.path}
+                        element={route.component}
+                    />
+                ))}
+            </Routes>
     </div>
   );
 }

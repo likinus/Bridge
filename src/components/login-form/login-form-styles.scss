@@ -1,0 +1,28 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 250px;
+}
+
+.input {
+    padding: 8px 16px;
+    width: 250px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+
+.error {
+    margin: 6px 0;
+    color: red;
+}
+
+.submitButton {
+    padding: 8px;
+    background-color: #520fff;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}

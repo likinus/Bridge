@@ -1,0 +1,58 @@
+.gameContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 55px;
+}
+
+.cardContainer {
+  perspective: 1000px;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cardInnerRotate {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+.cardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.img {
+  width: 200px;
+}
+
+.playButtonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result {
+  margin-bottom: 8px;
+  color: #767579;
+}
