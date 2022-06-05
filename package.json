@@ -1,6 +1,7 @@
 {
   "name": "bridge-app",
   "version": "0.1.0",
+  "homepage": "https://bridge-test-062022.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
